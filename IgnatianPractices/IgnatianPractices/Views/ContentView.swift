@@ -8,19 +8,53 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var verseVM = VerseViewModel()
+    
     var body: some View {
-        VStack {
-            NavigationStack {
-                //BookView()
-                VerseView()
+        ZStack {
+            Color("Background").edgesIgnoringSafeArea(.all)
+            NavigationView {
+                List {
+                    //BookView()
+                    Section {
+                        NavigationLink {
+                            VerseView(passage: "PSALM")
+                        } label: {
+                            Text("Lectio Divina")
+                        }
+                        NavigationLink {
+                            VerseView(passage: "GOSPEL")
+                        } label: {
+                            Text("Imaging Prayer")
+                        }
+                        NavigationLink {
+                            ConsolationView()
+                        } label: {
+                            Text("Examen")
+                        }
+                    } header: {
+                        Text("Daily exercises")
+                    }
+                }.background(Color.black)
+                .navigationBarTitle("Pocket Monk")
             }
+            .listStyle(.insetGrouped)
             .padding()
-        }
+            .alert(isPresented: $verseVM.hasError, error: verseVM.error) {
+                Text("")
+            } // .alert addresses error handling
+        }.ignoresSafeArea()
     }
 }
 
+
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            ContentView().environment(\.colorScheme, .dark)
+        }
     }
 }

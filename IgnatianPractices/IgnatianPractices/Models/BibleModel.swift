@@ -31,9 +31,6 @@ struct ChapterVerseModel : Codable, Identifiable {
 }
 
 struct MetaModel : Codable {
-//    var id : UUID { // have to have this for it to be identifiable
-//        return UUID()
-//    }
     let fums : String
     let fumsId : String
     let fumsJsInclude : String
@@ -58,11 +55,3 @@ struct ChapterModel : Codable, Identifiable {
     //let position : Int
 }
 
-//struct VerseModel : Codable, Identifiable {
-//    let id : String
-//    let orgId : String
-//    let bibleId : String
-//    let bookId : String
-//    let chapterId : String
-//    let reference : String
-//}

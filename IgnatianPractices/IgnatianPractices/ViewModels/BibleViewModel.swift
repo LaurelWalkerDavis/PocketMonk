@@ -13,15 +13,7 @@ class BibleViewModel : ObservableObject {
     @Published var hasError = false
     @Published var error : BibleModelError?
     private let url = "https://api.scripture.api.bible/v1/bibles/06125adad2d5898a-01/books?include-chapters=true"
-    
-//    @Published private(set) var chapterData = [ChapterModel]()
-//    @Published var hasError = false
-//    @Published var error : BibleModelError?
-//    private let url = "https://api.scripture.api.bible/v1/bibles/06125adad2d5898a-01/books"
-    
-    
-    //@Published private(set) var listOfGospels = [BookModel]() //variable is public, but the setter is private // @Pub tells program that this is the variable that will be changing and published
-    @Published private(set) var listOfPsalms = [ChapterModel]() //variable is public, but the setter is private // @Pub tells program that this is the variable that will be changing and published
+
     
     
     @MainActor // run on main thread
