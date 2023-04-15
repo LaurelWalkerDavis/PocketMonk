@@ -16,18 +16,17 @@ struct ContentView: View {
             Color("Background").edgesIgnoringSafeArea(.all)
             NavigationView {
                 List {
-                    //BookView()
                     Section {
                         NavigationLink {
-                            VerseView(passage: "PSALM")
+                            LectioDivina()                        
                         } label: {
                             Text("Lectio Divina")
                                 .font(.system(size: 25))
                         }
                         NavigationLink {
-                            VerseView(passage: "GOSPEL")
+                            ImagingPrayer()
                         } label: {
-                            Text("Imaging Prayer")
+                            Text("Imaginative Prayer")
                                 .font(.system(size: 25))
                         }
                         NavigationLink {

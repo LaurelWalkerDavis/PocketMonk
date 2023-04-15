@@ -20,7 +20,11 @@ struct ConsolationView: View {
     
     
     var body: some View {
-        NavigationView {
+        VStack(alignment: .leading) {
+            Text("Daily Consolations")
+                .font(.largeTitle)
+                .bold()
+                .padding()
             List {
                 Section {
                     Text("A spiritual consolation “is a profound experience of interior joy, consisting in seeing God’s presence in everything. It strengthens faith and hope and also the ability to do good,” - Pope Francis")
@@ -33,14 +37,19 @@ struct ConsolationView: View {
                     Text("Guiding Questions")
                 }
                 
+//                Section {
+//                    NavigationLink {
+//                        ConsolationDetail(consolation: $details)
+//                    } label: {
+//                        Text("Add New Consolation")
+//                            .foregroundColor(Color.green)
+//                            .font(.system(size: 20))
+//                    }
+//                }
                 Section {
-                    NavigationLink {
-                        ConsolationDetail(consolation: $details)
-                    } label: {
-                        Text("Add New Consolation")
-                            .foregroundColor(Color.green)
-                            .font(.system(size: 20))
-                    }
+                    ConsolationDetail(consolation: $details)
+                }header: {
+                    Text("My Consolations")
                 }
                 Section {
                     ForEach($consol.consolations) { $cns in
@@ -53,9 +62,7 @@ struct ConsolationView: View {
                 } header: {
                     Text("Today's Consolations")
                 }
-            }.navigationBarTitle(Text("Daily Consolations"))
-                //.navigationBarTitleDisplayMode(.inline)
-                .ignoresSafeArea(edges: .bottom)
+            }.listStyle(SidebarListStyle())
             
             .onAppear {
                 consol.fetchData(date: today)

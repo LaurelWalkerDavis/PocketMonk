@@ -20,7 +20,11 @@ struct DesolationsView: View {
     
     
     var body: some View {
-        NavigationView {
+        VStack(alignment: .leading) {
+            Text("Daily Desolations")
+                .font(.largeTitle)
+                .bold()
+                .padding()
             List {
                 Section {
                     Text("A spiritual desolation is an experience of darkness of soul, disturbance in it, movement to things low and earthly, the unquiet of different agitations and temptations, moving to want of confidence, without hope, without love, when one finds oneself all lazy, tepid, sad and as if separated from his Creator and Lord.” - Pope Francis")
@@ -33,14 +37,19 @@ struct DesolationsView: View {
                     Text("Guiding Questions")
                 }
                 
+//                Section {
+//                    NavigationLink {
+//                        DesolationDetail(desolation: $details)
+//                    } label: {
+//                        Text("Add New Desolation")
+//                            .foregroundColor(Color.green)
+//                            .font(.system(size: 20))
+//                    }
+//                }
                 Section {
-                    NavigationLink {
-                        DesolationDetail(desolation: $details)
-                    } label: {
-                        Text("Add New Desolation")
-                            .foregroundColor(Color.green)
-                            .font(.system(size: 20))
-                    }
+                    DesolationDetail(desolation: $details)
+                }header: {
+                    Text("My Desolations")
                 }
                 Section {
                     ForEach($desol.desolations) { $des in
@@ -53,16 +62,13 @@ struct DesolationsView: View {
                 } header: {
                     Text("Today's Desolations")
                 }
-            }.navigationBarTitle(Text("Daily Desolations"))
-            //.navigationBarTitleDisplayMode(.inline)
-                .ignoresSafeArea(edges: .bottom)
-            
-                .onAppear {
-                    desol.fetchData(date: today)
-                }
-                .refreshable { // makes list refresh when you pull it down
-                    desol.fetchData(date: today)
-                }
+            }.listStyle(SidebarListStyle())
+            .onAppear {
+                desol.fetchData(date: today)
+            }
+            .refreshable { // makes list refresh when you pull it down
+                desol.fetchData(date: today)
+            }
         }
     }
     
