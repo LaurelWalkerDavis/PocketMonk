@@ -1,26 +1,36 @@
 //
-//  ChapterView.swift
+//  BibleView.swift
 //  IgnatianPractices
 //
-//  Created by Laurel Walker Davis on 4/8/23.
+//  Created by Laurel Walker Davis on 4/2/23.
 //
 
 import SwiftUI
 
 struct ChapterView: View {
+    @ObservedObject var biblevm = BibleViewModel()
     
-    var book : BookModel
     
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(book.chapters) { chpt in
-                            NavigationLink(chpt.number) {
-                                ChapterView(book: book)
-                            }
-                        }
-                    }
-                }
+        ScrollView {
+            ForEach(biblevm.bibleData) {
+                book in Text(book.name)
             }
+            .task {
+                await biblevm.fetchData()
+            }
+            .listStyle(.grouped)
+            .navigationTitle("Passage")
+            .alert(isPresented: $biblevm.hasError, error: biblevm.error) {
+                Text("")
+            } // .alert addresses error handling
         }
+    }
+}
 
+
+struct ChapterView_Previews: PreviewProvider {
+    static var previews: some View {
+        ChapterView()
+    }
+}

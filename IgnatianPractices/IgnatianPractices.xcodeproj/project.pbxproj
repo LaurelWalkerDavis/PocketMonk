@@ -7,32 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F51803FD29E0FA9500316379 /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51803FC29E0FA9500316379 /* BookView.swift */; };
-		F51803FF29E1B5F900316379 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51803FE29E1B5F900316379 /* ChapterView.swift */; };
-		F518040129E1BDCA00316379 /* VerseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518040029E1BDCA00316379 /* VerseView.swift */; };
-		F518040329E3608500316379 /* VerseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518040229E3608500316379 /* VerseViewModel.swift */; };
 		F518697B29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518697A29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift */; };
 		F518697D29DA3AAE0074E5E7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518697C29DA3AAE0074E5E7 /* ContentView.swift */; };
 		F518697F29DA3AAF0074E5E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F518697E29DA3AAF0074E5E7 /* Assets.xcassets */; };
 		F518698229DA3AAF0074E5E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F518698129DA3AAF0074E5E7 /* Preview Assets.xcassets */; };
 		F518698929DA50850074E5E7 /* BibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518698829DA50850074E5E7 /* BibleViewModel.swift */; };
 		F518698B29DA5A200074E5E7 /* BibleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518698A29DA5A200074E5E7 /* BibleModel.swift */; };
-		F5ED6FC429E8E074007439AF /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F5ED6FC329E8E074007439AF /* FirebaseAnalytics */; };
-		F5ED6FC629E8E074007439AF /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = F5ED6FC529E8E074007439AF /* FirebaseFirestore */; };
-		F5ED6FC829E8E074007439AF /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F5ED6FC729E8E074007439AF /* FirebaseFirestoreSwift */; };
-		F5ED6FCA29E8E3CF007439AF /* ConsolationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FC929E8E3CF007439AF /* ConsolationModel.swift */; };
-		F5ED6FCC29E8E66F007439AF /* ConsolationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCB29E8E66F007439AF /* ConsolationViewModel.swift */; };
-		F5ED6FCE29E8E890007439AF /* ConsolationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCD29E8E890007439AF /* ConsolationView.swift */; };
-		F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */; };
-		F5ED6FD229E8ED7A007439AF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */; };
-		F5ED6FD429E99A12007439AF /* DayInReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5ED6FD329E99A12007439AF /* DayInReviewView.swift */; };
+		F518699429DA68DE0074E5E7 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F518699329DA68DE0074E5E7 /* ChapterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F51803FC29E0FA9500316379 /* BookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookView.swift; sourceTree = "<group>"; };
-		F51803FE29E1B5F900316379 /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
-		F518040029E1BDCA00316379 /* VerseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseView.swift; sourceTree = "<group>"; };
-		F518040229E3608500316379 /* VerseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseViewModel.swift; sourceTree = "<group>"; };
 		F518697729DA3AAE0074E5E7 /* IgnatianPractices.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IgnatianPractices.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F518697A29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IgnatianPracticesApp.swift; sourceTree = "<group>"; };
 		F518697C29DA3AAE0074E5E7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,12 +24,7 @@
 		F518698129DA3AAF0074E5E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F518698829DA50850074E5E7 /* BibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleViewModel.swift; sourceTree = "<group>"; };
 		F518698A29DA5A200074E5E7 /* BibleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BibleModel.swift; sourceTree = "<group>"; };
-		F5ED6FC929E8E3CF007439AF /* ConsolationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationModel.swift; sourceTree = "<group>"; };
-		F5ED6FCB29E8E66F007439AF /* ConsolationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationViewModel.swift; sourceTree = "<group>"; };
-		F5ED6FCD29E8E890007439AF /* ConsolationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationView.swift; sourceTree = "<group>"; };
-		F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsolationDetail.swift; sourceTree = "<group>"; };
-		F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F5ED6FD329E99A12007439AF /* DayInReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayInReviewView.swift; sourceTree = "<group>"; };
+		F518699329DA68DE0074E5E7 /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +32,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5ED6FC429E8E074007439AF /* FirebaseAnalytics in Frameworks */,
-				F5ED6FC629E8E074007439AF /* FirebaseFirestore in Frameworks */,
-				F5ED6FC829E8E074007439AF /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				F518697A29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift */,
-				F5ED6FD129E8ED7A007439AF /* GoogleService-Info.plist */,
 				F518697E29DA3AAF0074E5E7 /* Assets.xcassets */,
 				F518699029DA5AD20074E5E7 /* ViewModels */,
 				F518698F29DA5AC50074E5E7 /* Models */,
@@ -104,12 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F518697C29DA3AAE0074E5E7 /* ContentView.swift */,
-				F51803FC29E0FA9500316379 /* BookView.swift */,
-				F51803FE29E1B5F900316379 /* ChapterView.swift */,
-				F518040029E1BDCA00316379 /* VerseView.swift */,
-				F5ED6FCD29E8E890007439AF /* ConsolationView.swift */,
-				F5ED6FCF29E8E9CD007439AF /* ConsolationDetail.swift */,
-				F5ED6FD329E99A12007439AF /* DayInReviewView.swift */,
+				F518699329DA68DE0074E5E7 /* ChapterView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				F518698A29DA5A200074E5E7 /* BibleModel.swift */,
-				F5ED6FC929E8E3CF007439AF /* ConsolationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,8 +96,6 @@
 			isa = PBXGroup;
 			children = (
 				F518698829DA50850074E5E7 /* BibleViewModel.swift */,
-				F518040229E3608500316379 /* VerseViewModel.swift */,
-				F5ED6FCB29E8E66F007439AF /* ConsolationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -149,11 +116,6 @@
 			dependencies = (
 			);
 			name = IgnatianPractices;
-			packageProductDependencies = (
-				F5ED6FC329E8E074007439AF /* FirebaseAnalytics */,
-				F5ED6FC529E8E074007439AF /* FirebaseFirestore */,
-				F5ED6FC729E8E074007439AF /* FirebaseFirestoreSwift */,
-			);
 			productName = IgnatianPractices;
 			productReference = F518697729DA3AAE0074E5E7 /* IgnatianPractices.app */;
 			productType = "com.apple.product-type.application";
@@ -182,9 +144,6 @@
 				Base,
 			);
 			mainGroup = F518696E29DA3AAE0074E5E7;
-			packageReferences = (
-				F5ED6FC229E8E074007439AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-			);
 			productRefGroup = F518697829DA3AAE0074E5E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -201,7 +160,6 @@
 			files = (
 				F518698229DA3AAF0074E5E7 /* Preview Assets.xcassets in Resources */,
 				F518697F29DA3AAF0074E5E7 /* Assets.xcassets in Resources */,
-				F5ED6FD229E8ED7A007439AF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,18 +171,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F518697D29DA3AAE0074E5E7 /* ContentView.swift in Sources */,
-				F518040329E3608500316379 /* VerseViewModel.swift in Sources */,
 				F518698929DA50850074E5E7 /* BibleViewModel.swift in Sources */,
-				F518040129E1BDCA00316379 /* VerseView.swift in Sources */,
-				F5ED6FCC29E8E66F007439AF /* ConsolationViewModel.swift in Sources */,
-				F5ED6FCE29E8E890007439AF /* ConsolationView.swift in Sources */,
-				F51803FF29E1B5F900316379 /* ChapterView.swift in Sources */,
-				F51803FD29E0FA9500316379 /* BookView.swift in Sources */,
-				F5ED6FCA29E8E3CF007439AF /* ConsolationModel.swift in Sources */,
+				F518699429DA68DE0074E5E7 /* ChapterView.swift in Sources */,
 				F518698B29DA5A200074E5E7 /* BibleModel.swift in Sources */,
-				F5ED6FD029E8E9CD007439AF /* ConsolationDetail.swift in Sources */,
 				F518697B29DA3AAE0074E5E7 /* IgnatianPracticesApp.swift in Sources */,
-				F5ED6FD429E99A12007439AF /* DayInReviewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,35 +373,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		F5ED6FC229E8E074007439AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		F5ED6FC329E8E074007439AF /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F5ED6FC229E8E074007439AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-		F5ED6FC529E8E074007439AF /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F5ED6FC229E8E074007439AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		F5ED6FC729E8E074007439AF /* FirebaseFirestoreSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F5ED6FC229E8E074007439AF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F518696F29DA3AAE0074E5E7 /* Project object */;
 }

@@ -9,14 +9,11 @@ import Foundation
 
 class BibleViewModel : ObservableObject {
     
-    @Published private(set) var bibleData = [BookModel]()
+    @Published private(set) var bookData = [BookModel]()
     @Published var hasError = false
     @Published var error : BibleModelError?
-    private let url = "https://api.scripture.api.bible/v1/bibles/06125adad2d5898a-01/books"
-    
-    
-    @Published private(set) var listOfGospels = [BookModel]() //variable is public, but the setter is private // @Pub tells program that this is the variable that will be changing and published
-    @Published private(set) var listOfPsalms = [ChapterModel]() //variable is public, but the setter is private // @Pub tells program that this is the variable that will be changing and published
+    private let url = "https://api.scripture.api.bible/v1/bibles/06125adad2d5898a-01/books?include-chapters=true"
+
     
     
     @MainActor // run on main thread
@@ -32,7 +29,7 @@ class BibleViewModel : ObservableObject {
                     self.error = BibleModelError.decodeError
                     return
                 }
-                self.bibleData = results.data
+                self.bookData = results.data
             } catch {
                 self.hasError.toggle()
                 self.error = BibleModelError.customError(error: error)
@@ -40,19 +37,9 @@ class BibleViewModel : ObservableObject {
         }
     }
 }
-//    func fetchGospels() {
-//        ForEach(self.bibleData.) {
-//            bk in BookModel(id: <#T##String#>, bibleId: <#T##String#>, abbreviation: <#T##String#>, name: <#T##String#>, nameLong: <#T##String#>, chapters: <#T##[ChapterModel]#>)
-//        }
-//
-//        self.listOfGospels = [
-//            BookModel(id: "MAT", bibleId: "06125adad2d5898a-01", abbreviation: "Mt.", name: "Matthew", nameLong: "The Gospel According to Matthew", chapters: <#[ChapterModel]#>),
-//            BookModel(id: "MRK"),
-//            BookModel(id: "LUK"),
-//            BookModel(id: "JHN"),
-//            ]
-//        }
-//    }
+
+
+
 
 extension BibleViewModel {
     enum BibleModelError : LocalizedError {
