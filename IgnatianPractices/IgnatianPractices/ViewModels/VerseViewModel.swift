@@ -38,7 +38,7 @@ class VerseViewModel : ObservableObject {
                 }
             }
         } else {
-            self.title = "Imaging Prayer"
+            self.title = "Imaginative Prayer"
             if let url = getGospelAPIURL() {
                     do {
                         var request = URLRequest(url: url)

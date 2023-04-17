@@ -8,33 +8,52 @@
 import Foundation
 import FirebaseCore
 import FirebaseFirestore
+import CoreData
 
 class ConsolationViewModel : ObservableObject {
     
     @Published var consolations = [ConsolationModel]()
-    @Published var docCount: Int = 0
+    @Published var docCount: Int = 1
     @Published var dateNum : String = ""
+    @Published var date = Date()
     let db = Firestore.firestore()
     
     
     init() {
+        updateDocCount()
+        setCurrentDate()
         setDateNum()
-        db.collection("consolations").addSnapshotListener { snapshot, error in
-            guard let snapshot = snapshot
-            else {
-                print("Error fetching consolations: \(error!)")
-                return
-            }
-            // Update the document count based on the number of documents in the collection
-            self.docCount = snapshot.documents.count
-        }
     }
     
     
-    func fetchData() {
+    func fetchData(date: Date? = nil) {
         self.consolations.removeAll()
-        db.collection("consolations")
-            .getDocuments() { (querySnapshot, err) in
+        let query = Firestore.firestore().collection("consolations")
+                
+        if let date = date {
+            let calendar = Calendar.current
+            let dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+            let startDate = calendar.date(from: dateComponents)!
+            let endDate = calendar.date(byAdding: .day, value: 1, to: startDate)!
+
+            query
+                .whereField("date", isGreaterThanOrEqualTo: startDate)
+                .whereField("date", isLessThan: endDate).getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting consolations: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        do {
+                            self.consolations.append(try document.data(as: ConsolationModel.self))
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }
+            }            
+        }
+        else {
+             query.getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting consolations: \(err)")
                 } else {
@@ -47,14 +66,7 @@ class ConsolationViewModel : ObservableObject {
                     }
                 }
             }
-        //        db.collection("consolations").addSnapshotListener { snapshot, error in
-        //            guard let snapshot = snapshot
-        //            else {
-        //                print("Error fetching consolations: \(error!)")
-        //                return
-        //            }
-        //            // Update the document count based on the number of documents in the collection
-        //            self.docCount = snapshot.documents.count
+        }
     }
     
     
@@ -67,7 +79,8 @@ class ConsolationViewModel : ObservableObject {
                 
                 docRef.updateData([
                     "consolationData" : consolations.consolationData,
-                    "dateNum": getDateNum()
+                    "date" : consolations.date,
+                    "dateNum" : dateNum
                 ]) { err in
                     if let err = err {
                         print("Error updating consolation: \(err)")
@@ -78,36 +91,53 @@ class ConsolationViewModel : ObservableObject {
             }
         } else {
             // Add consolation - this is a new consolation and does not already have an id in Firebase
+            updateDocCount()
+            setDateNum()
             if !consolations.dateNum.isEmpty || !consolations.consolationData.isEmpty {
-                    var ref: DocumentReference? = nil
-                    ref = db.collection("consolations").addDocument(data: [
-                        "consolationData": consolations.consolationData,
-                        "dateNum": consolations.dateNum
-                    ]) { err in
-                        if let err = err {
-                            print("Error adding consolation: \(err)")
-                        } else {
-                            print("Consolation added with ID: \(ref!.documentID)")
-                        }
+                var ref: DocumentReference? = nil
+                ref = db.collection("consolations").addDocument(data: [
+                    "consolationData": consolations.consolationData,
+                    "date" : consolations.date,
+                    "dateNum": dateNum
+                ]) { err in
+                    if let err = err {
+                        print("Error adding consolation: \(err)")
+                    } else {
+                        print("Consolation added with ID: \(ref!.documentID)")
                     }
                 }
             }
         }
-        
-        
-        func getCurrentDate() -> String {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .full
-            dateFormatter.timeStyle = .none
-            return dateFormatter.string(from: Date())
-        }
-        
-        func setDateNum() {
-            dateNum = String(docCount) + " - " + getCurrentDate()
-        }
-        
-        func getDateNum() -> String {
-            return dateNum
+    }
+    
+    func getDateString() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        let dt = dateFormatter.string(from: Date())
+        return dt
+    }
+    
+    func setCurrentDate() {
+        self.date = Date()
+    }
+    
+    func updateDocCount() {
+        db.collection("consolations").addSnapshotListener { snapshot, error in
+            guard let snapshot = snapshot
+            else {
+                print("Error fetching consolations: \(error!)")
+                return
+            }
+            // Update the document count based on the number of documents in the collection
+            self.docCount = snapshot.documents.count
         }
     }
+    
+    func setDateNum() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        let dt = dateFormatter.string(from: Date())
+        dateNum = String(docCount) + " - " + "\(dt)"
+    }
+}
 
