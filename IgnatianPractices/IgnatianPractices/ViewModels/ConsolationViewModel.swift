@@ -11,7 +11,6 @@ import FirebaseFirestore
 import CoreData
 
 class ConsolationViewModel : ObservableObject {
-    
     @Published var consolations = [ConsolationModel]()
     @Published var docCount: Int = 1
     @Published var dateNum : String = ""

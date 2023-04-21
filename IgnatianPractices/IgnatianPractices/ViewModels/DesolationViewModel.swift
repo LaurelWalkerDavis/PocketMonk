@@ -70,7 +70,6 @@ class DesolationViewModel : ObservableObject {
     
     
     func saveData(desolations: DesolationModel) {  // see https://firebase.google.com/docs/firestore/query-data/get-data#swift for help
-        
         if let id = desolations.id {
             // This is to edit desolations that already exist. It connects with what's in Firebase and updates it.
             if !desolations.dateNum.isEmpty || !desolations.desolationData.isEmpty {

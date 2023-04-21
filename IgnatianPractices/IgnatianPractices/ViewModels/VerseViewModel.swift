@@ -9,11 +9,9 @@ import Foundation
 
 class VerseViewModel : ObservableObject {
     @Published private(set) var verseData : ChapterVerseModel?
-    //@Published private(set) var verseData = ChapterVerseModel()
     @Published var hasError = false
     @Published var error : VerseModelError?
     @Published private(set) var title = ""
-    //private let url = getChapterAPIURL()
     
     
     @MainActor // run on main thread

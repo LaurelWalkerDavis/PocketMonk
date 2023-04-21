@@ -11,8 +11,6 @@ import FirebaseFirestore
 
 class NoteViewModel : ObservableObject {
 @Published var notes = [NoteModel]()
-//@Published var docCount: Int = 1
-//@Published var dateNum : String = ""
 @Published var dateStr : String = ""
 
 @Published var date = Date()
@@ -26,9 +24,8 @@ init() {
 }
 
 
-func fetchData(date: Date? = nil) {
+    func fetchData(date: Date? = nil) {
     self.notes.removeAll()
-    //var query = db.collection("notes")
     let query = Firestore.firestore().collection("notes")
     if let date = date {
         let calendar = Calendar.current
@@ -129,23 +126,4 @@ func setDateStr() {
 func setCurrentDate() {
     self.date = Date()
 }
-
-//func updateDocCount() {
-//    db.collection("notes").addSnapshotListener { snapshot, error in
-//        guard let snapshot = snapshot
-//        else {
-//            print("Error fetching notes: \(error!)")
-//            return
-//        }
-//        // Update the document count based on the number of documents in the collection
-//        self.docCount = snapshot.documents.count
-//    }
-//}
-
-//func setDateStr() {
-//    let dateFormatter = DateFormatter()
-//    dateFormatter.dateStyle = .long
-//    let dt = dateFormatter.string(from: Date())
-//    dateNum = String(docCount) + " - " + "\(dt)"
-//}
 }
