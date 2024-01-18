@@ -13,5 +13,6 @@ Firebase console is here: https://console.firebase.google.com/u/0/
 
 ## Assets are located here:
 The Assets folder is too large for GitHub, so you may retrieve them from the following link. 
+
 [PocketMonk Assets](https://drive.google.com/drive/folders/1YpWkHMYVbOsI3xybDws4ltgVkDxc9nIm?usp=sharing)
 
