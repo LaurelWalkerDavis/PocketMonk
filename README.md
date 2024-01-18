@@ -1,7 +1,7 @@
 # PocketMonk Mobile App
 PocketMonk is a mobile app dedicated to providing users with exercises from the Ignatian spiritual tradition. 
-Each exercise provides an exercise description and directions for their practice. In addition, the website allows 
-users to enter their reflections after each exercise to track their prayer and meditation practices.
+Each exercise provides an exercise description and directions for their practice. In addition, the mobile app
+allows users to enter their reflections after each exercise to track their prayer and meditation practices.
 
 ## Technology Used
 This App was made in Xcode with SwiftUI. It utilizes Google Firebase (Firebase Auth and Firestore).
@@ -20,4 +20,4 @@ The Assets folder is too large for GitHub, so you may retrieve them from the fol
 All work completed by Laurel Walker Davis © 2023.
 
 ## Purpose
-This project was created as part of the Database 2 course at Auburn University.
+This project was created as part of the Mobile Applications 2 course at Auburn University.
