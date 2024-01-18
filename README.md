@@ -16,3 +16,8 @@ The Assets folder is too large for GitHub, so you may retrieve them from the fol
 
 [PocketMonk Assets](https://drive.google.com/drive/folders/1YpWkHMYVbOsI3xybDws4ltgVkDxc9nIm?usp=sharing)
 
+## Authorship
+All work completed by Laurel Walker Davis © 2023.
+
+## Purpose
+This project was created as part of the Database 2 course at Auburn University.
